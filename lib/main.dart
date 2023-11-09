@@ -1,19 +1,17 @@
 void main() {
-  late String name1; // String
-  late Object name2; // Dynamic
-  name1 = "nico";
-  name2 = "lynn";
+  String name = "nico";
+  bool alive = true;
 
-  // name1 = 1;  // A value of type 'int' can't be assigned to a variable of type 'String'.
-  name2 = 2;
+  int age = 12;
+  double money = 69.99;
 
-  late final String name3;
-  late final String name4;
+  // int와 double은 num을 상속
+  // num은 정수, 실수 모두 가능
+  num x = 12;
+  x = 0.1;
 
-  // do something, go to api
-  name3 = "nico";
-  name4 = "lynn";
-
-  // name3 = "cava"; // The late final local variable is already assigned.
-  // name4 = 1;  // The late final local variable is already assigned.
+  print(name.length);
+  print(alive.toString());
+  print(age.isEven);
+  print(money.sign);
 }
