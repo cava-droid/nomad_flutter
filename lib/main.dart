@@ -1,12 +1,7 @@
 void main() {
-  String? nico = 'nico';
-  nico = null;
+  // var name1 = 'nico';
+  // String name2 = 'lynn';
 
-  // nico.isNotEmpty;
-
-  if (nico != null) {
-    nico.isNotEmpty;
-  }
-
-  nico?.isNotEmpty;
+  const name1 = 'nico';
+  const String name2 = 'lynn';
 }
