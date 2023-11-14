@@ -1,41 +1,24 @@
 void main() {
-  // Maps
-  // @javascript Object
-  // @python Dictionary
+  // Sets
+  // 모든 item이 unique
+  // @python Tuple
+  // @javascript Set
 
-  var player = {
-    'name': 'nico',
-    'xp': 19.99,
-    'superpower': false,
-  };
+  var numbersSet = {1, 2, 3, 4};
+  Set<int> numbers2 = {1, 2, 3, 4};
 
-  // Map<String, Object> player = {
-  //   'name': 'nico',
-  //   'xp': 19.99,
-  //   'superpower': false,
-  // };  // 위와 같음
-  print(player);
+  var numbersList = [1, 2, 3, 4];
 
-  Map<int, bool> player2 = {
-    1: true,
-    2: false,
-    3: false,
-  };
-  print(player2);
+  numbersSet.add(1);
+  numbersSet.add(1);
+  numbersSet.add(1);
+  numbersSet.add(1);
 
-  // Map의 List도 가능하지만,
-  // 특히 API등을 사용할 때, 이 형태보다는 class를 추천
-  List<Map<String, Object>> players = [
-    {
-      'name': 'nico',
-      'xp': 19.99,
-      'superpower': false,
-    },
-    {
-      'name': 'lynn',
-      'xp': 18.55,
-      'superpower': true,
-    },
-  ];
-  print(players);
+  numbersList.add(1);
+  numbersList.add(1);
+  numbersList.add(1);
+  numbersList.add(1);
+
+  print(numbersSet);
+  print(numbersList);
 }
