@@ -1,42 +1,41 @@
 void main() {
-  // String interpolation
-  var name = 'nico';
-  var age = 10;
-  // $변수명
-  // ${변수명을 포함한 계산식}
-  var greeting =
-      "Hello everyone, my name is $name and I'm ${age + 2}, nice to meet you.";
-  print(greeting);
+  // Maps
+  // @javascript Object
+  // @python Dictionary
 
-  // List
-  var numbers = [1, 2, 3, 4];
-  // List<int> numbers = [1, 2, 3, 4]; // 위와 같음
+  var player = {
+    'name': 'nico',
+    'xp': 19.99,
+    'superpower': false,
+  };
 
-  numbers.add(5);
-  // numbers.add("lalala"); // The argument type 'String' can't be assigned to the parameter type 'int'.
+  // Map<String, Object> player = {
+  //   'name': 'nico',
+  //   'xp': 19.99,
+  //   'superpower': false,
+  // };  // 위와 같음
+  print(player);
 
-  // collection if, collection for 지원
+  Map<int, bool> player2 = {
+    1: true,
+    2: false,
+    3: false,
+  };
+  print(player2);
 
-  // collection if
-  // 로그인을 했을 때 나오는 메뉴 등에서 사용
-  var giveMeFive = true;
-  var collectionIfNumbers = [
-    1,
-    2,
-    3,
-    4,
-    if (giveMeFive) 5,
+  // Map의 List도 가능하지만,
+  // 특히 API등을 사용할 때, 이 형태보다는 class를 추천
+  List<Map<String, Object>> players = [
+    {
+      'name': 'nico',
+      'xp': 19.99,
+      'superpower': false,
+    },
+    {
+      'name': 'lynn',
+      'xp': 18.55,
+      'superpower': true,
+    },
   ];
-
-  print(collectionIfNumbers);
-
-  // collection for
-  var oldFriends = ['nico', 'lynn'];
-  var newFriends = [
-    'lewis',
-    'ralph',
-    'darren',
-    for (var friend in oldFriends) "❤️ $friend",
-  ];
-  print(newFriends);
+  print(players);
 }
