@@ -1,13 +1,17 @@
-// Defining a function
+// Named Parameters
 
-String sayHello(String name){
-  return "Hello $name nice to meet you.";
+String sayHello({
+  required String name, 
+  required age, 
+  required country,
+  }){
+  return "Hello $name, you are $age, and you come from $country.";
 }
 
-// fat arrow syntax
-String sayHello2(String name) => "Hello $name nice to meet you.";
-
 void main() {
-  print(sayHello('nico'));
-  print(sayHello2('lynn'));
+  print(sayHello(
+    name: 'nico', 
+    age: 20,
+    country: "Cuba",
+    ));
 }
