@@ -1,11 +1,9 @@
-// 4.2 Named Constructor Parameters
+// 4.3 Named Constructors
 
 class Player {
-  // Ver 3. Named Constructor parameters
   final String name;
-  int xp;
+  int xp, age;
   String team;
-  int age;
 
   Player({
     required this.name,
@@ -14,24 +12,39 @@ class Player {
     required this.age,
   });
 
+  Player.createBluePlayer({
+    required String name,
+    required int age,
+  })  : age = age,
+        name = name,
+        team = 'blue',
+        xp = 0;
+
+  // required 들은 this로 하고 초기화 따로 안 해도 되는 듯?
+  Player.createRedPlayer({
+    required this.name,
+    required this.age,
+  })  : team = 'red',
+        xp = 0;
+
   void sayHello() {
-    print("Hi, my name is $name");
+    print("=============");
+    print("Name = $name");
+    print("Age = $age");
+    print("Team = $team");
+    print("XP = $xp");
   }
 }
 
 void main() {
-  var player = Player(
+  var player = Player.createBluePlayer(
     name: "nico",
-    xp: 1500,
-    team: "blue",
     age: 21,
   );
   player.sayHello();
 
-  var player2 = Player(
+  var player2 = Player.createRedPlayer(
     name: "lynn",
-    xp: 2500,
-    team: "red",
     age: 12,
   );
   player2.sayHello();
