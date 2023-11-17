@@ -1,21 +1,18 @@
-// 4.1 Constructors
+// 4.2 Named Constructor Parameters
 
 class Player {
-  // Ver 1
-  // late final String name;
-  // late int xp;
-
-  // Player(String name, int xp) {
-  //   this.name = name;
-  //   this.xp = xp;
-  // }
-
-  // Ver 2
-  // late를 지우고, constructor의 argument에서 자료형을 지우는 대신 this. 을 추가
+  // Ver 3. Named Constructor parameters
   final String name;
   int xp;
+  String team;
+  int age;
 
-  Player(this.name, this.xp);
+  Player({
+    required this.name,
+    required this.xp,
+    required this.team,
+    required this.age,
+  });
 
   void sayHello() {
     print("Hi, my name is $name");
@@ -23,9 +20,19 @@ class Player {
 }
 
 void main() {
-  var player = Player("nico", 1500);
+  var player = Player(
+    name: "nico",
+    xp: 1500,
+    team: "blue",
+    age: 21,
+  );
   player.sayHello();
 
-  var player2 = Player("lynn", 2500);
+  var player2 = Player(
+    name: "lynn",
+    xp: 2500,
+    team: "red",
+    age: 12,
+  );
   player2.sayHello();
 }
