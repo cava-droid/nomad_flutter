@@ -1,24 +1,31 @@
-// Your First Class
+// 4.1 Constructors
 
 class Player {
-  // class의 property를 정의할 때는 var 대신 String, int 등을 사용
-  String name = 'nico';
-  int xp = 1500;
+  // Ver 1
+  // late final String name;
+  // late int xp;
+
+  // Player(String name, int xp) {
+  //   this.name = name;
+  //   this.xp = xp;
+  // }
+
+  // Ver 2
+  // late를 지우고, constructor의 argument에서 자료형을 지우는 대신 this. 을 추가
+  final String name;
+  int xp;
+
+  Player(this.name, this.xp);
 
   void sayHello() {
-    print("Hi, my name is $name"); // this는 아래처럼 꼭 필요할 때만 사용하는 것을 권장
-
-    int xp = 100;
-    print("xp = $xp");
-    print("this.xp = ${this.xp}");
+    print("Hi, my name is $name");
   }
 }
 
 void main() {
-  var player = Player(); // new 불필요
-  print(player.name);
-  player.name = 'lynn';
-  print(player.name);
-
+  var player = Player("nico", 1500);
   player.sayHello();
+
+  var player2 = Player("lynn", 2500);
+  player2.sayHello();
 }
