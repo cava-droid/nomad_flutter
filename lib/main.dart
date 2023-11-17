@@ -1,37 +1,25 @@
-// QQ Operator
-// ??
-// ??=
+// typedef
 
-// Step 1.
-// String capitalizeName(String? name) {
-//   if (name != null) {
-//     return name.toUpperCase();
-//   }
-//   return 'ANON';
+typedef ListOfInts = List<int>;
+typedef UserInfo = Map<String, String>;
+
+// List<int> reverseListOfNumbers(List<int> list) {
+//   var reversed = list.reversed;
+//   return reversed.toList();
 // }
+ListOfInts reverseListOfNumbers(ListOfInts list) {
+  var reversed = list.reversed;
+  return reversed.toList();
+}
 
-// Step 2.
-// String capitalizeName(String? name) =>
-//     (name != null) ? name.toUpperCase() : 'ANON';
-
-// Step 3.
-String capitalizeName(String? name) => name?.toUpperCase() ?? 'ANON';
+// String sayHi(Map<String, String> userInfo) {
+//   return "Hi ${userInfo['name']}";
+// }
+String sayHi(UserInfo userInfo) {
+  return "Hi ${userInfo['name']}!";
+}
 
 void main() {
-  print(
-    capitalizeName('nico'),
-  );
-  print(
-    capitalizeName(null),
-  );
-
-  String? name2;
-  name2 ??= 'nico';
-  name2 ??= 'another';
-
-  print(name2);
-
-  name2 = null;
-  name2 ??= 'another';
-  print(name2);
+  print(reverseListOfNumbers([1, 2, 3]));
+  print(sayHi({"name": "nico"}));
 }
