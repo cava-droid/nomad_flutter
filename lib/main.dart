@@ -1,10 +1,13 @@
-// 4.5 Cascade Notation
-// ..의 앞의 .은 가장 가까이 있는 class를 가리킴
+// 4.6 Enums
+// 입력 실수 방지 위함
+// 예) Colors.red
+
+enum Team { red, blue } // String으로 해야 할 필요 없음, = 넣지 않음, ; 넣지 않음
 
 class Player {
   String name;
   int xp;
-  String team;
+  Team team;
 
   Player({
     required this.name,
@@ -29,17 +32,17 @@ void main() {
   var apiData = [
     {
       "name": "nico",
-      "team": "red",
+      "team": Team.red,
       "xp": 0,
     },
     {
       "name": "lynn",
-      "team": "blue",
+      "team": Team.blue,
       "xp": 0,
     },
     {
       "name": "dal",
-      "team": "red",
+      "team": Team.red,
       "xp": 0,
     }
   ];
@@ -68,10 +71,10 @@ void main() {
   // nico.xp = 1200000;
   // nico.team = 'blue';
 
-  var nico = Player(name: "nico", xp: 1200, team: "red")
+  var nico = Player(name: "nico", xp: 1200, team: Team.red)
     ..name = 'las'
     ..xp = 1200000
-    ..team = 'blue';
+    ..team = Team.blue;
 
   var abc = nico;
   print("=============");
@@ -82,7 +85,7 @@ void main() {
   var potato = nico
     ..name = 'cava'
     ..xp = 111
-    ..team = 'red';
+    ..team = Team.red;
 
   print("=============");
   print("Abc Name = ${abc.name}");
