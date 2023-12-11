@@ -1,10 +1,15 @@
-// 4.6 Enums
-// 입력 실수 방지 위함
-// 예) Colors.red
+// 4.7 Abstract Classes
+// 청사진만 작성
+
+abstract class Human {
+  // walk(){} 가 아니라
+  // method의 이름과 반환형, 파라미터등만 작성
+  void walk();
+}
 
 enum Team { red, blue } // String으로 해야 할 필요 없음, = 넣지 않음, ; 넣지 않음
 
-class Player {
+class Player extends Human {
   String name;
   int xp;
   Team team;
@@ -20,11 +25,23 @@ class Player {
         xp = playerJson["xp"],
         team = playerJson["team"];
 
+  @override
+  void walk() {
+    print("I'm walking");
+  }
+
   void sayHello() {
     print("=============");
     print("Name = $name");
     print("Team = $team");
     print("XP = $xp");
+  }
+}
+
+class Coach extends Human {
+  @override
+  void walk() {
+    print('the coach is walking');
   }
 }
 
